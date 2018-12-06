@@ -1,0 +1,6 @@
+.frmSearch {padding: 10px 15px ;}
+#name-list{float:left;list-style:none;margin-top:-3px;padding:0;width:228px;position: absolute;margin-left:903px;}
+#name-list li{padding: 10px; background: #f0f0f0; border-bottom: #bbb9b9 1px solid;}
+#name-list li:hover{background:#ece3d2;cursor: pointer;}
+#search-box{margin-left:905px;outline: 2px solid #200000;}
+
