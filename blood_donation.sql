@@ -57,8 +57,8 @@ CREATE TABLE `cereri` (
 --
 
 INSERT INTO `cereri` (`idCerere`, `dataEfectuarii`, `numeBeneficiar`, grupaSangvinaBeneficiar`,`locatie`, `idLocatie`, `usernameDoctor`, `gradUrgenta`) VALUES
-(12345, '2017-07-17 19:11:53', 'Ciunga Gumaru', 'ab4', 'Balaceanca', '9', 'baddoctor', '1'),
-(12345, '2017-08-26 19:11:53', 'Ciunga Grosaru', '0I', 'Macarenco', '99', 'gooddoctor', '2');
+(12345, '2017-07-17 19:11:53', 'Ciunga Gumaru', 'ab4', 'Balaceanca', 9, 'baddoctor', '1'),
+(12346, '2017-08-26 19:11:53', 'Ciunga Grosaru', '0I', 'Macarenco', 99, 'gooddoctor', '2');
 
 
 
@@ -78,7 +78,7 @@ CREATE TABLE `utilizator` (
 -- Salvarea datelor din tabel `utilizator`
 --
 
-INSERT INTO `utilizator` (`username`, `nume`, `parola`, `profil`, `grupa_sangvina`) VALUES
+INSERT INTO `utilizator` (`username`, `nume`, `parola`, `profil`, `grupaSangvina`) VALUES
 ('badbeldeanu', 'Beldi', 'ionut', 'donator', 'ab4'),
 ('baddoctor', 'Ciomu', 'ciunga1234', 'doctor', NULL),
 ('gooddoctor', 'Gabi', 'gabi1234', 'doctor', NULL),
@@ -95,13 +95,10 @@ ALTER TABLE `cereri`
   ADD PRIMARY KEY (`idCerere`);
 
 ALTER TABLE `analize`
-  ADD FOREIGN KEY (`username`);
+  ADD FOREIGN KEY (`username`) references utilizator(username);
   
 ALTER TABLE `cereri`
-  ADD FOREIGN KEY (`usernameDoctor`);
-
-ALTER TABLE `utilizator`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  ADD FOREIGN KEY (`usernameDoctor`) references utilizator(username);
   
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
