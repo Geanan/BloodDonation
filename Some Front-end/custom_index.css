@@ -250,3 +250,12 @@ form::after {
   align-items: center;
 
 }
+
+.carousel-item {
+  max-height: 350px;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
